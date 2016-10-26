@@ -123,7 +123,7 @@ function Entity(x, y, radius, xspeed, yspeed)
 		if(!this.drag)
 		{
 			
-			/* 
+			
 			for(var  i = -1; i <= 1; i++)
 			{
 				for(var  j = -1; j <= 1; j++)
@@ -146,7 +146,8 @@ function Entity(x, y, radius, xspeed, yspeed)
 						}
 					}
 				}
-			} */
+			} 
+			/*
 			
 			for(var i = 0; i < len; i ++)
 			{
@@ -156,7 +157,7 @@ function Entity(x, y, radius, xspeed, yspeed)
 					this.Compute(e);
 				}
 			}
-			
+			*/
 			
 			/*if(this.x < this.radius) this.x = game.areaW + this.radius;
 			if(this.x > game.areaW + this.radius) this.x = -this.radius;
@@ -289,7 +290,7 @@ function Game()
 				var oldY = e.y;
 				e.x += e.sx;
 				e.y += e.sy;
-				//updateEntity(e, oldX, oldY);
+				updateEntity(e, oldX, oldY);
 			}
 		}
 		if(Inputs.dragRight)
@@ -322,7 +323,7 @@ function Game()
 		  
 		this.ctx.lineWidth = 1;
 		
-		/*
+		
 		//center origin
 		var n = this.areaW / this.gridSize / this.scaling;
 		if(this.scaling < 0.05)
@@ -337,7 +338,7 @@ function Game()
 			this.ctx.lineTo(-s/2 + i * s + this.centerX % s +0.5,-s/2 +  i * s + this.centerY % s + 10000 +0.5);
 			this.ctx.stroke();
 		}
-		  */
+		  
 			 
 		this.ctx.globalAlpha = 0.5;
 		this.ctx.save();
@@ -389,7 +390,7 @@ function Game()
 	this.LoadLevel = function(lev)
 	{ 
 		this.ResetLevel();
-		var range = 5;
+		var range = 1;
 		for(var i = 0; i < 100; i++)
 		{
 			this.entities.push(new Entity(-this.areaW * range + Math.random()*this.areaW * range*2, -this.areaH*range + Math.random()*this.areaH * range*2));
